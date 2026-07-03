@@ -26,18 +26,6 @@ export function ContentSections() {
         </div>
       </div>
 
-      <div className="container testimonials-section" id="testimonials">
-        <h2 className="section-title">Client Feedback</h2>
-        <div className="testimonials-grid">
-          {site.testimonials.map((item, index) => (
-            <div key={index} className="testimonial-card">
-              <p>“{item.quote}”</p>
-              <span>{item.author}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
       <div className="container projects-section" id="projects">
         <h2 className="section-title">Projects</h2>
         <div className="projects-grid">

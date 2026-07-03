@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { Layers3, Mountain, Network, PencilRuler, Satellite } from "lucide-react";
+import { Landmark, Layers3, Mountain, Network, PencilRuler, Satellite } from "lucide-react";
 import type { ComponentType, SVGProps } from "react";
 
 
@@ -17,10 +17,8 @@ export interface Project {
   tags: string[];
   images: ProjectImage[];
   steps: string[];
+  comingSoon?: boolean;
 }
-
-const gdrivePlaceholder =
-  "https://lh3.googleusercontent.com/d/1IPZcfAtV9egUzk9TbNvEfTJraAWoC0YR";
 
 export const projects: Project[] = [
   {
@@ -31,32 +29,19 @@ export const projects: Project[] = [
     icon: Mountain,
     tags: ["ArcGIS Pro", "DEM", "Slope", "Hydrology", "Contour Lines", "Aspect", "Hillshade"],
     images: [
-      { src: gdrivePlaceholder, alt: "DEM analysis preview" },
-      { src: "/projects/dem-analysis-contour.jpg", alt: "Color contour map" }
+      { src: "/projects/Hillshade.webp", alt: "DEM hillshade map" },
+      { src: "/projects/Slope.webp", alt: "DEM slope map" },
+      { src: "/projects/Aspect.webp", alt: "DEM aspect analysis" },
+      { src: "/projects/contour list.webp", alt: "DEM contour line study" },
+      { src: "/projects/couter .webp", alt: "DEM contour line study" },
+      { src: "/projects/hydrolgay.webp", alt: "DEM contour line study" },
+
     ],
     steps: [
       "Prepare the DEM and clip the study area.",
       "Compute slope, aspect and hillshade.",
       "Generate contour lines and drainage networks.",
       "Deliver a polished map for print and presentation."
-    ]
-  },
-  {
-    slug: "suitability-analysis",
-    title: "Spatial Suitability Analysis",
-    titleEn: "Suitability Analysis",
-    summary: "Combining spatial criteria using Multi-Criteria Decision Analysis (MCDA) to identify the most suitable locations for development.",
-    icon: Layers3,
-    tags: ["MCDA", "Weighted Overlay", "Raster", "Reclassify"],
-    images: [
-      { src: gdrivePlaceholder, alt: "Suitability analysis preview" },
-      { src: gdrivePlaceholder, alt: "Weighted overlay preview" }
-    ],
-    steps: [
-      "Select influential criteria and prepare data layers.",
-      "Reclassify layers onto a common scale.",
-      "Apply relative weights for each criterion.",
-      "Design the final suitability map."
     ]
   },
   {
@@ -67,8 +52,12 @@ export const projects: Project[] = [
     icon: Satellite,
     tags: ["Landsat", "Sentinel", "NDVI", "NDWI", "NDBI", "Image Processing", "Spectral Indices", "Remote Sensing", "Raster Analysis", "Classification"],
     images: [
-      { src: gdrivePlaceholder, alt: "Remote sensing preview" },
-      { src: gdrivePlaceholder, alt: "Spectral index preview" }
+      { src: "/projects/NDVI _Africa.webp", alt: "NDVI remote sensing index" },
+      { src: "/projects/torba afc.webp", alt: "NDWI remote sensing index" },
+      { src: "/projects/Saad El Nhda.webp", alt: "NDBI temporal analysis 1985" },
+      { src: "/projects/asmalya.webp", alt: "NDBI temporal analysis 1985" },
+      { src: "/projects/bassten.webp", alt: "NDBI temporal analysis 1985" },
+      { src: "/projects/ndvi.webp", alt: "NDBI temporal analysis 2005" },
     ],
     steps: [
       "Clean imagery and select suitable scenes.",
@@ -78,21 +67,29 @@ export const projects: Project[] = [
     ]
   },
   {
-    slug: "network-analysis",
-    title: "Network Analysis",
-    titleEn: "Network Analysis",
-    summary: "Analyzing road networks, optimal routes, and service areas to support transportation and spatial accessibility decisions.",
-    icon: Network,
-    tags: ["Routing", "Service Area", "Closest Facility", "Roads", "Utility Network", "Geometric Network"],
+    slug: "dar-salam-al-basateen",
+    title: "Dar Salam & Al-Basateen",
+    titleEn: "Dar Salam & Al-Basateen",
+    summary: "Creating a clear spatial presentation of Dar Salam and Al-Basateen to support urban understanding, planning context, and presentation-ready map communication.",
+    icon: Landmark,
+    tags: ["Urban Mapping", "Spatial Analysis", "Planning", "Cartography", "GIS"],
     images: [
-      { src: gdrivePlaceholder, alt: "Network analysis preview" },
-      { src: gdrivePlaceholder, alt: "Route analysis preview" }
+      { src: "/projects/DarElsalam.webp", alt: "Dar Salam planning map" },
+      { src: "/projects/bassten.webp", alt: "Al-Basateen spatial analysis" },
+      { src: "/projects/NDBI2025.webp", alt: "Dar Salam & Al-Basateen overview" },
+      { src: "/projects/ndvi2005.webp", alt: "Dar Salam & Al-Basateen overview" },
+      { src: "/projects/ndvi1985.webp", alt: "Dar Salam & Al-Basateen overview" },
+      { src: "/projects/ndvi.webp", alt: "Dar Salam & Al-Basateen overview" },
+      { src: "/projects/ndvi2025.webp", alt: "Dar Salam & Al-Basateen overview" },
+      { src: "/projects/ndvi2005.webp", alt: "Dar Salam & Al-Basateen overview" },
+      { src: "/projects/ndvi1985.webp", alt: "Dar Salam & Al-Basateen overview" },
+
     ],
     steps: [
-      "Clean the road network and define travel attributes.",
-      "Build routing rules and service area layers.",
-      "Analyze closest facilities and optimal paths.",
-      "Present results in clear static maps."
+      "Collect and organize relevant spatial data for the study area.",
+      "Prepare a clear base map and define key urban features.",
+      "Visualize the area with balanced cartographic styling.",
+      "Deliver a polished map suitable for presentation and planning discussions."
     ]
   },
   {
@@ -103,14 +100,57 @@ export const projects: Project[] = [
     icon: PencilRuler,
     tags: ["Digitizing", "Geodatabase", "Topology", "Editing"],
     images: [
-      { src: gdrivePlaceholder, alt: "Digitizing preview" },
-      { src: gdrivePlaceholder, alt: "Geodatabase preview" }
+      { src: "/projects/helwan.webp", alt: "Digitizing vector conversion sample" },
+      { src: "/projects/bsat.webp", alt: "Map digitizing and geodatabase work" },
+      { src: "/projects/tawza.webp", alt: "Map digitizing and geodatabase work" },
+      { src: "/projects/اqlubea.webp", alt: "Map digitizing and geodatabase work" },
+
     ],
     steps: [
       "Design the geodatabase structure.",
       "Digitize spatial features accurately.",
       "Apply topology rules and review errors.",
       "Deliver organized, ready-to-use layers."
+    ]
+  },
+  {
+    slug: "suitability-analysis",
+    title: "Spatial Suitability Analysis",
+    titleEn: "Suitability Analysis",
+    summary: "Combining spatial criteria using Multi-Criteria Decision Analysis (MCDA) to identify the most suitable locations for development.",
+    icon: Layers3,
+    tags: ["MCDA", "Weighted Overlay", "Raster", "Reclassify"],
+    comingSoon: true,
+    images: [
+      { src: "/projects/saad el nhda.webp", alt: "Suitability map for Saad El Nhda" },
+      { src: "/projects/tawza.webp", alt: "Suitable site selection map" },
+      { src: "/projects/helwan.webp", alt: "Urban suitability planning map" }
+    ],
+    steps: [
+      "Select influential criteria and prepare data layers.",
+      "Reclassify layers onto a common scale.",
+      "Apply relative weights for each criterion.",
+      "Design the final suitability map."
+    ]
+  },
+  {
+    slug: "network-analysis",
+    title: "Network Analysis",
+    titleEn: "Network Analysis",
+    summary: "Analyzing road networks, optimal routes, and service areas to support transportation and spatial accessibility decisions.",
+    icon: Network,
+    tags: ["Routing", "Service Area", "Closest Facility", "Roads", "Utility Network", "Geometric Network"],
+    comingSoon: true,
+    images: [
+      { src: "/projects/torba afc.webp", alt: "Network analysis road map" },
+      { src: "/projects/ramyramzy19.png", alt: "Service area and routing analysis" },
+      { src: "/projects/اqlubea.webp", alt: "Network connectivity planning" }
+    ],
+    steps: [
+      "Clean the road network and define travel attributes.",
+      "Build routing rules and service area layers.",
+      "Analyze closest facilities and optimal paths.",
+      "Present results in clear static maps."
     ]
   }
 ];

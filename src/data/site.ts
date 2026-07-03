@@ -44,16 +44,5 @@ export const site = {
         "Machine learning models for infrastructure planning, risk assessment, and site suitability."
     }
   ],
-  testimonials: [
-    {
-      quote:
-        "Ramy delivered a clean spatial analysis dashboard that helped our team reduce site selection time by 40%.",
-      author: "Project Manager, Urban Planning Firm"
-    },
-    {
-      quote:
-        "The remote sensing report was precise and ready for presentation to stakeholders. Great clarity and execution.",
-      author: "Environmental Consultant"
-    }
-  ]
+  testimonials: []
 };

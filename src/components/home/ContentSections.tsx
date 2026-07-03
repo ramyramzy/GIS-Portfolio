@@ -1,5 +1,6 @@
 import { site } from "@/data/site";
 import ProjectCard from "@/components/sections/ProjectCard";
+import RevealOnScroll from "@/components/ui/RevealOnScroll";
 import { projects } from "@/data/projects";
 
 export function ContentSections() {
@@ -26,24 +27,17 @@ export function ContentSections() {
         </div>
       </div>
 
-      <div className="container testimonials-section" id="testimonials">
-        <h2 className="section-title">Client Feedback</h2>
-        <div className="testimonials-grid">
-          {site.testimonials.map((item, index) => (
-            <div key={index} className="testimonial-card">
-              <p>“{item.quote}”</p>
-              <span>{item.author}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
       <div className="container projects-section" id="projects">
         <h2 className="section-title">Projects</h2>
         <div className="projects-grid">
-          {projects.map((project) => (
-            <ProjectCard project={project} key={project.slug} />
-          ))}
+          {projects
+            .slice()
+            .sort((a, b) => (a.comingSoon === b.comingSoon ? 0 : a.comingSoon ? 1 : -1))
+            .map((project) => (
+              <RevealOnScroll key={project.slug} className="project-card-reveal">
+                <ProjectCard project={project} />
+              </RevealOnScroll>
+            ))}
         </div>
       </div>
     </>

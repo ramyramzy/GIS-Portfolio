@@ -32,6 +32,34 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   const Icon = project.icon;
 
+  if (project.comingSoon) {
+    return (
+      <main className="page-shell">
+        <section className="project-hero">
+          <div className="container">
+            <Link className="btn" href="/#projects">
+              <ArrowRight size={17} aria-hidden="true" />
+              Back to Projects
+            </Link>
+            <div className="project-hero-meta">
+              <Icon size={48} strokeWidth={1.7} aria-hidden="true" />
+            </div>
+            <span className="section-kicker section-kicker--hero">
+              {project.titleEn}
+            </span>
+            <h1>Coming soon</h1>
+            <p className="project-description project-description--wide">
+              This project is being prepared with care and precision. The full presentation will be available shortly, with refined visuals, thoughtful context, and a polished GIS story.
+            </p>
+            <p className="project-description project-description--small">
+              Thank you for your interest. Please revisit this page soon to discover the completed project showcase.
+            </p>
+          </div>
+        </section>
+      </main>
+    );
+  }
+
   return (
     <main className="page-shell">
       <section className="project-hero">
@@ -40,30 +68,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <ArrowRight size={17} aria-hidden="true" />
             Back to Projects
           </Link>
-          <div style={{ marginTop: 26, color: "var(--icon)" }}>
+          <div className="project-hero-meta">
             <Icon size={48} strokeWidth={1.7} aria-hidden="true" />
           </div>
-          <span className="section-kicker" style={{ marginTop: 18 }}>
+          <span className="section-kicker section-kicker--hero">
             {project.titleEn}
           </span>
           <h1>{project.titleEn}</h1>
-          <p>{project.summary}</p>
+          <p className="project-description">{project.summary}</p>
           <BadgeList items={project.tags} />
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container project-detail">
-          <span className="section-kicker">Methodology</span>
-          <h2>Methodology</h2>
-          <div style={{ display: "grid", gap: 12, marginTop: 20 }}>
-            {project.steps.map((step, index) => (
-              <div className="hero-panel" key={step}>
-                <span className="badge">{String(index + 1).padStart(2, "0")}</span>
-                <p style={{ margin: "10px 0 0", color: "var(--muted)" }}>{step}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -74,6 +87,22 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <ProjectGallery images={project.images} />
         </div>
       </section>
+
+      <section className="section">
+        <div className="container project-detail">
+          <span className="section-kicker">Methodology</span>
+          <h2>Methodology</h2>
+          <div className="project-steps">
+            {project.steps.map((step, index) => (
+              <div className="hero-panel" key={step}>
+                <span className="badge">{String(index + 1).padStart(2, "0")}</span>
+                <p className="project-step-text">{step}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }

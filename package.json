@@ -7,9 +7,11 @@
   },
   "scripts": {
     "dev": "next dev",
+    "generate-thumbs": "node scripts/generate-thumbs.js",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "prelaunch": "node scripts/prelaunch-checks.js"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
@@ -29,6 +31,7 @@
     "@typescript-eslint/parser": "^8.62.1",
     "eslint": "^9.0.0",
     "eslint-config-next": "^16.2.10",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "sharp": "^0.32.4"
   }
 }

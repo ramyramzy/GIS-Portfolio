@@ -12,7 +12,10 @@ export default function ProjectCard({ project }: { project: Project }) {
           <div className="card-icon-area">
             <Icon size={24} strokeWidth={1.5} />
           </div>
-          <h3>{project.titleEn}</h3>
+          <div>
+            <h3>{project.titleEn}</h3>
+            {project.comingSoon ? <span className="card-status">Coming soon</span> : null}
+          </div>
         </div>
         <p className="card-summary">{project.summary}</p>
         <div className="card-footer">
