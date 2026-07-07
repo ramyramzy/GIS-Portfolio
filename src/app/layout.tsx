@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { SiteLayout } from "@/layouts/SiteLayout";
 import { siteMetadata } from "@/shared/constants";
 import "./globals.css";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
