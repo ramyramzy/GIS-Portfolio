@@ -5,6 +5,7 @@ import { SiteLayout } from "@/layouts/SiteLayout";
 import { siteMetadata } from "@/shared/constants";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -41,9 +42,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${dmSerif.variable}`} data-scroll-behavior="smooth">
-      <body>
-        <SiteLayout>{children}</SiteLayout>
-      </body>
+    ss<body>
+  {children}
+  <SpeedInsights />
+</body>
     </html>
   );
 }
