@@ -9,7 +9,7 @@ export const site = {
   copyright: "© 2026 Ramy Ramzy. All rights reserved.",
   social: {
    
-    linkedin: "https://www.linkedin.com/in/ramy-ramzy-354222371",
+    linkedin: "https://www.linkedin.com/in/ramy-ramzy19",
     github: "https://github.com/ramyramzy",
     telegram: "https://t.me/ramyramzy19",
     whatsapp: "https://wa.me/qr/PCKULRWA4BRTJ1",
